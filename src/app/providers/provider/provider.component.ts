@@ -15,20 +15,22 @@ export class ProviderComponent implements OnInit {
     this.resetForm();
   }
 
-  resetForm(form?: NgForm) {
-    if (form != null) {
-      form.resetForm();
-      this.service.formData = {
-        Id: null,
-        Name: '',
-        Key: '',
-        Description: '',
-        ContactPerson: '',
-        ContactEmail: '',
-        ContactPhone: '',
-        Blocked: false,
-        ApiKey: ''
-      };
-    }
+  resetForm(form ?: NgForm) {
+    if (form != null)
+    form.resetForm();
+    this.service.formData = {
+      Id: null,
+      Name: '',
+      Key: '',
+      Description: '',
+      ContactPerson: '',
+      ContactEmail: '',
+      ContactPhone: '',
+      Blocked: false,
+      ApiKey: ''
+    };
+  }
+  onSubmit(form: NgForm) {
+    this.insertRecord(form);
   }
 }
